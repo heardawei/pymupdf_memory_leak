@@ -162,7 +162,7 @@ for i in range(1, 30):
     # gc.collect()
 
     test_get_pixmap(file)
-    pymupdf.TOOLS.store_shrink(100)
+    # pymupdf.TOOLS.store_shrink(100)
     gc.collect()
 
     # test_get_cdrawings(file)
