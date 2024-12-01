@@ -1,0 +1,35 @@
+# files
+*.pyc
+*.jp*g
+layout.json
+
+# pdf testing files
+*.pdf
+!demo*.pdf
+*coverage*
+
+test/issues/
+test/features/
+test/outputs/
+
+diff.png
+
+# building dir
+dist/
+*egg-info/
+pdf2docx*.rst
+
+.github
+.venv
+docs
+pdf2docx
+*.yaml
+*GPL
+LICENSE
+Makefile
+*.in
+*.md
+*.txt
+setup.py
+test
+__pycache__
