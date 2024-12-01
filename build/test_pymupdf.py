@@ -14,7 +14,7 @@ import pdf2docx.image
 import pdf2docx.image.ImagesExtractor
 
 files = "build/PDF"
-file = "build/largePDF/2000+.pdf"
+file = "build/PDF/红星新闻.pdf"
 
 def test_get_text(temp_file_path):
     """
@@ -161,9 +161,9 @@ for i in range(1, 30):
     # pymupdf.TOOLS.store_shrink(100)
     # gc.collect()
 
-    test_get_pixmap(file)
+    # test_get_pixmap(file)
     # pymupdf.TOOLS.store_shrink(100)
-    gc.collect()
+    # gc.collect()
 
     # test_get_cdrawings(file)
     # pymupdf.TOOLS.store_shrink(100)
@@ -181,9 +181,9 @@ for i in range(1, 30):
     # pymupdf.TOOLS.store_shrink(100)
     # gc.collect()
 
-    # test_pdf2docx(file)
-    # pymupdf.TOOLS.store_shrink(100)
-    # gc.collect()
+    test_pdf2docx(file)
+    pymupdf.TOOLS.store_shrink(100)
+    gc.collect()
 
     # stats[i] = process.memory_info().rss
     # logger.info(f'{i} {stats[0]/1024/1024:.3f}MB -> {stats[i]/1024/1024:.3f}MB, {100*stats[i]/stats[0]:.4f}% ↑')
