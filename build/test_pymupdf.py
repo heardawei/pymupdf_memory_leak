@@ -13,9 +13,8 @@ import pymupdf
 import pdf2docx.image
 import pdf2docx.image.ImagesExtractor
 
-# files = ["build/红星新闻.pdf", "build/test_2791_content.pdf"]
 files = "build/PDF"
-
+file = "build/largePDF/2000+.pdf"
 
 def test_get_text(temp_file_path):
     """
@@ -154,48 +153,45 @@ stats[0] = process.memory_info().rss
 logger.info(f"{stats[0]/1024/1024:.3f}MB initial")
 
 for i in range(1, 30):
-    for f in os.listdir(files):
-        file = os.path.join(files, f)
+    # test_get_text(file)
+    # pymupdf.TOOLS.store_shrink(100)
+    # gc.collect()
 
-        test_get_text(file)
-        pymupdf.TOOLS.store_shrink(100)
-        gc.collect()
+    # test_get_texttrace(file)
+    # pymupdf.TOOLS.store_shrink(100)
+    # gc.collect()
 
-        # test_get_texttrace(file)
-        # pymupdf.TOOLS.store_shrink(100)
-        # gc.collect()
+    test_get_pixmap(file)
+    pymupdf.TOOLS.store_shrink(100)
+    gc.collect()
 
-        # test_get_pixmap(file)
-        # pymupdf.TOOLS.store_shrink(100)
-        # gc.collect()
+    # test_get_cdrawings(file)
+    # pymupdf.TOOLS.store_shrink(100)
+    # gc.collect()
 
-        # test_get_cdrawings(file)
-        # pymupdf.TOOLS.store_shrink(100)
-        # gc.collect()
+    # test_get_images(file)
+    # pymupdf.TOOLS.store_shrink(100)
+    # gc.collect()
 
-        # test_get_images(file)
-        # pymupdf.TOOLS.store_shrink(100)
-        # gc.collect()
+    # test_get_image_info(file)
+    # pymupdf.TOOLS.store_shrink(100)
+    # gc.collect()
 
-        # test_get_image_info(file)
-        # pymupdf.TOOLS.store_shrink(100)
-        # gc.collect()
+    # test_get_clip_pixmap(file)
+    # pymupdf.TOOLS.store_shrink(100)
+    # gc.collect()
 
-        # test_get_clip_pixmap(file)
-        # pymupdf.TOOLS.store_shrink(100)
-        # gc.collect()
+    # test_pdf2docx(file)
+    # pymupdf.TOOLS.store_shrink(100)
+    # gc.collect()
 
-        # test_pdf2docx(file)
-        # pymupdf.TOOLS.store_shrink(100)
-        # gc.collect()
+    # stats[i] = process.memory_info().rss
+    # logger.info(f'{i} {stats[0]/1024/1024:.3f}MB -> {stats[i]/1024/1024:.3f}MB, {100*stats[i]/stats[0]:.4f}% ↑')
 
-        # stats[i] = process.memory_info().rss
-        # logger.info(f'{i} {stats[0]/1024/1024:.3f}MB -> {stats[i]/1024/1024:.3f}MB, {100*stats[i]/stats[0]:.4f}% ↑')
-
-        stats[i] = process.memory_info().rss
-        logger.info(
-            f"{i} {stats[0]/1024/1024:.3f}MB -> {stats[i]/1024/1024:.3f}MB, {100*stats[i]/stats[0]:.4f}% ↑"
-        )
+    stats[i] = process.memory_info().rss
+    logger.info(
+        f"{i} {stats[0]/1024/1024:.3f}MB -> {stats[i]/1024/1024:.3f}MB, {100*stats[i]/stats[0]:.4f}% ↑"
+    )
 
 
 logger.info(stats)
